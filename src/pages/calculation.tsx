@@ -1,6 +1,7 @@
 import { useForm, SubmitHandler, FormProvider } from "react-hook-form";
 import FormInput from "../components/FormInput";
 import Select from "../components/Select";
+import ComboBox from "@/components/ComboBox";
 
 interface IForm {
   usage: string;
@@ -24,6 +25,7 @@ const Form = () => {
         <FormInput type="text" name="usage" />
         <FormInput type="number" name="quantity" />
         <Select />
+        <ComboBox />
       </form>
     </FormProvider>
   );
