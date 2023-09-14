@@ -21,11 +21,16 @@ const people = [
   // More users...
 ];
 
+interface ComboboxProps {
+  label?: string;
+  data: Array<string>;
+}
+
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function ComboBox() {
+export default function ComboBox({ label, data }: ComboboxProps) {
   const [query, setQuery] = useState("");
   const [selectedPerson, setSelectedPerson] = useState(null);
 
@@ -33,8 +38,8 @@ export default function ComboBox() {
     query === ""
       ? people
       : people.filter((person) => {
-          return person.name.toLowerCase().includes(query.toLowerCase());
-        });
+        return person.name.toLowerCase().includes(query.toLowerCase());
+      });
 
   return (
     <Combobox as="div" value={selectedPerson} onChange={setSelectedPerson}>

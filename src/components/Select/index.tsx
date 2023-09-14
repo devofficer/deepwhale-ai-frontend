@@ -1,31 +1,34 @@
 import { Fragment, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
+import { useEffect } from "react";
 
-const people = [
-  { id: 1, name: "Wade Cooper" },
-  { id: 2, name: "Arlene Mccoy" },
-  { id: 3, name: "Devon Webb" },
-  { id: 4, name: "Tom Cook" },
-  { id: 5, name: "Tanya Fox" },
-  { id: 6, name: "Hellen Schmidt" },
-  { id: 7, name: "Caroline Schultz" },
-  { id: 8, name: "Mason Heaney" },
-  { id: 9, name: "Claudie Smitham" },
-  { id: 10, name: "Emil Schaefer" },
-];
+interface SelectProps {
+  label?: string;
+  data: Array<string>;
+  handler: (item: string) => void;
+}
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Select() {
-  const [selected, setSelected] = useState(people[3]);
+export default function Select({ label, data, handler }: SelectProps) {
+  const [selected, setSelected] = useState(data[0]);
+  const handleChange = (e: string) => {
+    setSelected(e);
+    handler(e);
+  }
+
+  useEffect(() => {
+    setSelected(data[0]);
+  }, data)
 
   return (
-    <Listbox value={selected} onChange={setSelected}>
+    <Listbox value={selected} onChange={handleChange}>
       {({ open }) => (
         <>
+          <Listbox.Label className="block text-sm font-medium leading-6 text-gray-900 text-secondary-card-color">{label}</Listbox.Label>
           <div className="relative w-full mt-2">
             <Listbox.Button
               className={`
@@ -47,7 +50,7 @@ export default function Select() {
                 focus:ring-primary-card-color
               `}
             >
-              <span className="block truncate">{selected.name}</span>
+              <span className="block truncate">{selected}</span>
               <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                 <ChevronUpDownIcon
                   className="h-5 w-5 text-primary-card-color"
@@ -66,9 +69,9 @@ export default function Select() {
               <Listbox.Options
                 className={`absolute z-10 mt-1 max-h-60 w-full overflow-auto bg-primary-card-color py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm`}
               >
-                {people.map((person) => (
+                {data.map((item, idx) => (
                   <Listbox.Option
-                    key={person.id}
+                    key={idx}
                     className={({ active }) =>
                       classNames(
                         active
@@ -77,7 +80,7 @@ export default function Select() {
                         "relative cursor-default select-none py-2 pl-8 pr-4"
                       )
                     }
-                    value={person}
+                    value={item}
                   >
                     {({ selected, active }) => (
                       <>
@@ -87,7 +90,7 @@ export default function Select() {
                             "block truncate"
                           )}
                         >
-                          {person.name}
+                          {item}
                         </span>
 
                         {selected ? (

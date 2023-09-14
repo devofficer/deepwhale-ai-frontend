@@ -23,8 +23,9 @@ const Button = ({ label, className, handler }: ButtonProps) => {
         "dark:bg-secondary-card-color",
         "dark:text-secondary-card-text-color",
         "dark:hover:bg-secondary-card-color-hover",
-        "dark:active:bg-secondary-card-color-active"
-      ) + className}
+        "dark:active:bg-secondary-card-color-active",
+        className
+      )}
       onClick={handler}
     >
       {label}

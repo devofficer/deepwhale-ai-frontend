@@ -22,10 +22,13 @@ const Form = () => {
         noValidate
         onSubmit={(e) => e.preventDefault()}
       >
-        <FormInput type="text" name="usage" />
-        <FormInput type="number" name="quantity" />
-        <Select />
-        <Button label="Calculate" handler={handleSubmit} />
+        <p>blablablalbl</p>
+        <div>
+          <FormInput type="text" name="usage" />
+          <FormInput type="number" name="quantity" />
+          {/* <Select /> */}
+          <Button label="Calculate" handler={handleSubmit} />
+        </div>
       </form>
     </FormProvider>
   );
