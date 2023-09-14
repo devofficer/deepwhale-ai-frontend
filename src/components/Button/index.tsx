@@ -2,7 +2,7 @@ import clxs from "classnames";
 
 interface ButtonProps {
   label: string;
-  className: string;
+  className?: string;
   handler: () => void;
 }
 

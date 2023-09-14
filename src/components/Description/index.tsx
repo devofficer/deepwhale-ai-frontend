@@ -1,7 +1,11 @@
 import Button from "../Button";
-import Form from "../Form";
+import { useRouter } from "next/router";
 
 const Description = () => {
+  const router = useRouter()
+  const gotoCalculation = () => {
+    router.push('/calculation')
+  }
   return (
     <div className="flex-1 text-left sm:text-right">
       <div className="text-5xl text-primary-card-text-color dark:text-primary-title-text-color">
@@ -18,7 +22,7 @@ const Description = () => {
         </strong>
       </div>
       <div className="flex flex-col space-y-2 items-start md:items-end">
-        <Form />
+        <Button className="transition-all duration-300 ease-in-out hover:scale-110" label="Go to Calculation" handler={gotoCalculation} />
       </div>
     </div>
   );
