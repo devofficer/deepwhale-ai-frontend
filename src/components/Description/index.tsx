@@ -14,7 +14,7 @@ const Description = () => {
           improving your AWS bill, we take 15% of net savings.
         </p>
         <strong>
-          Exprience AWS cost optimization that pays for itself immediately.
+          Experience AWS cost optimization that pays for itself immediately.
         </strong>
       </div>
       <div className="flex flex-col space-y-2 items-start md:items-end">
