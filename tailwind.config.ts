@@ -17,8 +17,12 @@ const config: Config = {
         "primary-desc-text-color": "#DEDEDE",
         "primary-desc-strong-text-color": "#DEDEDE",
         "primary-card-color": "#FF92FA",
+        "primary-card-color-hover": "#FF72CA",
+        "primary-card-color-active": "#FF52AA",
         "primary-card-text-color": "#10181B",
         "secondary-card-color": "#1C1E26",
+        "secondary-card-color-hover": "#0C0E16",
+        "secondary-card-color-active": "#060804",
         "secondary-card-text-color": "#B86EB7",
       },
       fontSize: {
