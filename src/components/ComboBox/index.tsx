@@ -91,8 +91,8 @@ export default function ComboBox() {
               ring-opacity-5 
               focus:outline-none 
               sm:text-sm
-              dark:bg-primary-card-color
-              bg-secondary-card-color
+              bg-primary-card-color
+              dark:bg-secondary-card-color
               ring-black 
             `}
           >
@@ -103,8 +103,8 @@ export default function ComboBox() {
                 className={({ active }) =>
                   classNames(
                     active
-                      ? "dark:bg-secondary-card-color dark:text-primary-card-color bg-primary-card-color text-secondary-card-color"
-                      : "dark:bg-primary-card-color dark:text-secondary-card-color bg-secondary-card-color text-primary-card-color",
+                      ? "bg-light dark:bg-primary-card-color text-secondary-card-color"
+                      : "bg-primary-card-color text-secondary-card-color dark:bg-secondary-card-color dark:text-primary-card-color",
                     "relative cursor-pointer select-none py-2 pl-8 pr-4"
                   )
                 }
