@@ -19,13 +19,15 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 justify-between">
           <div className="flex">
-            <div className="flex flex-shrink-0 items-center">
+            <div className="flex flex-shrink-0 items-center transition ease-in-out delay-150 hover:translate-x-2 hover:scale-110 hover:cursor-pointer" onClick={goToHomePage}>
               <img
-                className="h-8 w-auto transition ease-in-out delay-150 hover:translate-x-2 hover:scale-110 hover:cursor-pointer"
+                className="h-8 w-auto"
                 src="/assets/logo.png"
                 alt="DeepWhale AI"
-                onClick={goToHomePage}
               />
+              <span className="ml-3 text-lg font-semibold font-mono text-main dark:text-white tracking-wider">
+                deepwhale
+              </span>
             </div>
           </div>
 
