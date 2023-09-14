@@ -26,9 +26,6 @@ export default function Navbar() {
                 alt="DeepWhale AI"
                 onClick={goToHomePage}
               />
-              <span className="ml-3 text-lg font-semibold text-main dark:text-white tracking-wider">
-                DeepWhale
-              </span>
             </div>
           </div>
 
