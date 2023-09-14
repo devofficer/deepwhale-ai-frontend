@@ -168,8 +168,8 @@ const Calculation = () => {
               <Select label="Product Description" data={PRODUCT_DESCRIPTIONS} handler={handleProductDescription} />
               <Select label="Product Type" data={PRODUCT_TYPES} handler={handleProductType} />
               <Select label="Tenancy" data={TENANCIES} handler={handleTenancy} />
-              <Select label="Usage Type" data={possibleUsageTypes()} handler={handleUsageType} />
               <Select label="Plan" data={PLANS} handler={handlePlan} />
+              <Select label="Usage Type" data={possibleUsageTypes()} handler={handleUsageType} />
               {/* <FormInput type="text" name="usage" /> */}
               <FormInput type="number" name="quantity" />
               <ComboBox label="" data={[]} />
