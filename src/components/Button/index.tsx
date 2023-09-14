@@ -2,10 +2,11 @@ import clxs from "classnames";
 
 interface ButtonProps {
   label: string;
+  className: string;
   handler: () => void;
 }
 
-const Button = ({ label, handler }: ButtonProps) => {
+const Button = ({ label, className, handler }: ButtonProps) => {
   return (
     <button
       className={clxs(
@@ -17,7 +18,7 @@ const Button = ({ label, handler }: ButtonProps) => {
         "text-primary-card-text-color",
         "dark:bg-secondary-card-color",
         "dark:text-secondary-card-text-color"
-      )}
+      ) + className}
       onClick={handler}
     >
       {label}

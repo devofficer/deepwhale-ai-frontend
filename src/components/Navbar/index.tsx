@@ -2,12 +2,17 @@ import { Disclosure } from "@headlessui/react";
 import { SunIcon, MoonIcon } from "@heroicons/react/24/outline";
 import { useTheme } from "next-themes";
 import clxs from "classnames";
+import { useRouter } from "next/router";
 
 export default function Navbar() {
   const { theme, setTheme } = useTheme();
   const handleThemeChange = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
+  const router = useRouter();
+  const goToHomePage = () => {
+    router.push('/');
+  }
 
   return (
     <nav className="sticky top-0 md:relative bg-secondary-card-color">
@@ -16,9 +21,10 @@ export default function Navbar() {
           <div className="flex">
             <div className="flex flex-shrink-0 items-center">
               <img
-                className="h-8 w-auto"
+                className="h-8 w-auto transition ease-in-out delay-150 hover:translate-x-2 hover:scale-110 hover:cursor-pointer"
                 src="/assets/logo.png"
                 alt="DeepWhale AI"
+                onClick={goToHomePage}
               />
             </div>
           </div>
@@ -40,9 +46,9 @@ export default function Navbar() {
                 <span className="absolute -inset-1.5" />
                 <span className="sr-only">View notifications</span>
                 {theme === "dark" ? (
-                  <SunIcon className="h-6 w-6" aria-hidden="true" />
+                  <SunIcon className="h-6 w-6 transition-all duration-500 ease-in-out hover:scale-110" aria-hidden="true" />
                 ) : (
-                  <MoonIcon className="h-6 w-6" aria-hidden="true" />
+                  <MoonIcon className="h-6 w-6 transition-all duration-500 ease-in-out hover:scale-110" aria-hidden="true" />
                 )}
               </button>
             </div>
