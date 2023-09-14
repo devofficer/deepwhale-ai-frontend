@@ -4,11 +4,11 @@ import Form from "../Form";
 const Description = () => {
   return (
     <div className="flex-1 text-left sm:text-right">
-      <div className="text-5xl text-primary-title-text-color">
+      <div className="text-5xl text-primary-card-text-color dark:text-primary-title-text-color">
         <h1 className="leading-normal">Easy Pricing.</h1>
         <h2 className="leading-normal">Guarenteed ROI.</h2>
       </div>
-      <div className="text-lg my-10 text-primary-desc-text-color">
+      <div className="text-lg my-10 text-primary-card-text-color dark:text-primary-desc-text-color">
         <p>
           Our platform is free to use for 30days. Once our flex discounts start
           improving your AWS bill, we take 15% of net savings.

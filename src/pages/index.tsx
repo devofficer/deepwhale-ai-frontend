@@ -13,7 +13,9 @@ export default function Home() {
         md:flex-row
         space-x-0 md:space-x-6 lg:space-x-16 
         space-y-16 md:space-y-0
-        bg-main 
+        dark:bg-ilght 
+        dark:bg-main
+        bg-light
         max-w-7xl 
         mx-auto 
         px-4 sm:px-6 lg:px-8
