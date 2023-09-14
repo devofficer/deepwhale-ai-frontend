@@ -11,6 +11,7 @@ const config: Config = {
     extend: {
       colors: {
         main: "#1C1E26",
+        light: "#FFE2E2",
         "primary-btn-color": "#FF92FA",
         "primary-title-text-color": "#FFFFFF",
         "primary-desc-text-color": "#DEDEDE",

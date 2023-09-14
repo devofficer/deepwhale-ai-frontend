@@ -10,7 +10,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 md:relative bg-secondary-card-color">
+    <nav className="sticky top-0 md:relative bg-light dark:bg-main">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 justify-between">
           <div className="flex">
@@ -20,6 +20,9 @@ export default function Navbar() {
                 src="/assets/logo.png"
                 alt="DeepWhale AI"
               />
+              <span className="ml-3 text-lg font-semibold text-main dark:text-white tracking-wider">
+                DeepWhale
+              </span>
             </div>
           </div>
 
@@ -31,10 +34,14 @@ export default function Navbar() {
                   "relative",
                   "rounded-full",
                   "p-1",
-                  "bg-secondary-card-color",
-                  "text-secondary-card-text-color",
-                  "hover:bg-primary-card-color",
-                  "hover:text-secondary-card-color"
+                  "dark:bg-main",
+                  "dark:text-secondary-card-text-color",
+                  "dark:hover:bg-primary-card-color",
+                  "dark:hover:text-secondary-card-color",
+                  "bg-light",
+                  "text-primary-card-text-color",
+                  "hover:bg-secondary-card-color",
+                  "hover:text-primary-card-color"
                 )}
               >
                 <span className="absolute -inset-1.5" />
