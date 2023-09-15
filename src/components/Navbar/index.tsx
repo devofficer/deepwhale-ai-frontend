@@ -11,15 +11,18 @@ export default function Navbar() {
   };
   const router = useRouter();
   const goToHomePage = () => {
-    router.push('/');
-  }
+    router.push("/");
+  };
 
   return (
-    <nav className="sticky top-0 md:relative bg-light dark:bg-main">
+    <nav className="sticky top-0 md:relative bg-light dark:bg-main z-50 shadow-md">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 justify-between">
           <div className="flex">
-            <div className="flex flex-shrink-0 items-center transition ease-in-out delay-150 hover:translate-x-2 hover:scale-110 hover:cursor-pointer" onClick={goToHomePage}>
+            <div
+              className="flex flex-shrink-0 items-center transition ease-in-out delay-150 hover:translate-x-2 hover:scale-110 hover:cursor-pointer"
+              onClick={goToHomePage}
+            >
               <img
                 className="h-8 w-auto"
                 src="/assets/logo.png"
@@ -52,9 +55,15 @@ export default function Navbar() {
                 <span className="absolute -inset-1.5" />
                 <span className="sr-only">View notifications</span>
                 {theme === "dark" ? (
-                  <SunIcon className="h-6 w-6 transition-all duration-500 ease-in-out hover:scale-110" aria-hidden="true" />
+                  <SunIcon
+                    className="h-6 w-6 transition-all duration-500 ease-in-out hover:scale-110"
+                    aria-hidden="true"
+                  />
                 ) : (
-                  <MoonIcon className="h-6 w-6 transition-all duration-500 ease-in-out hover:scale-110" aria-hidden="true" />
+                  <MoonIcon
+                    className="h-6 w-6 transition-all duration-500 ease-in-out hover:scale-110"
+                    aria-hidden="true"
+                  />
                 )}
               </button>
             </div>

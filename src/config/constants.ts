@@ -46,7 +46,6 @@ export const INSTANCE_FAMILIES = [
 ]
 
 export const PRODUCT_DESCRIPTIONS = [
-	'Not specified',
 	'Bring Your Own License (BYOL)',
 	'Linux/UNIX',
 	'Linux with SQL Server Enterprise',
@@ -70,7 +69,7 @@ export const PRODUCT_DESCRIPTIONS = [
 export const PRODUCT_TYPES = [
 	'EC2',
 	'Fargate',
-	'Lamda'
+	'Lambda'
 ]
 
 export const TENANCIES = [
@@ -82,3 +81,11 @@ export const PLANS = [
 	'1 year No Upfront Compute Savings Plan',
 	'3 year No Upfront Compute Savings Plan'
 ]
+
+export const UNITS = [
+	'Hrs',
+	'Lambda-GB-Second',
+	'Request'
+]
+
+export const NOT_SPECIFIED = 'Not specified';

@@ -24,6 +24,7 @@ const config: Config = {
         "secondary-card-color-hover": "#0C0E16",
         "secondary-card-color-active": "#060804",
         "secondary-card-text-color": "#B86EB7",
+        "secondary-card-bg-color": "#262626",
       },
       fontSize: {
         sm: "14px",

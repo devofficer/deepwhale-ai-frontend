@@ -44,3 +44,14 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-primary-card-color;
 }
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  margin-left: 4px;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

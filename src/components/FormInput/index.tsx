@@ -2,11 +2,12 @@ import { isErrorExist } from "@/utils/form";
 import { useFormContext } from "react-hook-form";
 
 interface IFormInput {
+  label?: string;
   type: string;
   name: string;
 }
 
-const FormInput = ({ type, name }: IFormInput) => {
+const FormInput = ({ type, name, label }: IFormInput) => {
   const {
     register,
     formState: { errors },
@@ -15,18 +16,24 @@ const FormInput = ({ type, name }: IFormInput) => {
 
   return (
     <div className="w-full flex flex-col text-left">
+      <span className="block text-sm font-medium leading-6 dark:text-secondary-card-text-color text-primary-card-text-color">
+        {label}
+      </span>
       <input
+        min="0"
         className={`
           rounded-md
           border-2
           outline-none
-          px-4 py-2
-        dark:bg-secondary-card-color
-        dark:text-secondary-card-text-color
-        bg-light
-        text-primary-card-text-color
+          px-3 py-1.5
+          mt-2
+          dark:bg-secondary-card-color
+          dark:text-secondary-card-text-color
+          bg-light
+          text-primary-card-text-color
           focus:ring-1
           focus:ring-offset-2
+          text-right
       ${
         isError
           ? "border-red-500 focus:ring-offset-light dark:focus:ring-offset-main focus:ring-red-500"

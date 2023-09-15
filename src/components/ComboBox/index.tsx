@@ -38,8 +38,8 @@ export default function ComboBox({ label, data }: ComboboxProps) {
     query === ""
       ? people
       : people.filter((person) => {
-        return person.name.toLowerCase().includes(query.toLowerCase());
-      });
+          return person.name.toLowerCase().includes(query.toLowerCase());
+        });
 
   return (
     <Combobox as="div" value={selectedPerson} onChange={setSelectedPerson}>
@@ -56,18 +56,18 @@ export default function ComboBox({ label, data }: ComboboxProps) {
             focus:ring-1 
             focus:ring-offset-2
             outline-none
-          dark:bg-secondary-card-color
-          dark:text-secondary-card-text-color
-          bg-light
-          text-primary-card-text-color
-          border-secondary-card-color 
-          focus:border-secondary-card-color-active 
-          focus:ring-secondary-card-color-active 
-          focus:ring-offset-light
-          dark:border-primary-card-color 
-          dark:focus:border-primary-card-color-active
-          dark:focus:ring-primary-card-color-active
-          dark:focus:ring-offset-main 
+            dark:bg-secondary-card-color
+            dark:text-secondary-card-text-color
+            bg-light
+            text-primary-card-text-color
+            border-secondary-card-color 
+            focus:border-secondary-card-color-active 
+            focus:ring-secondary-card-color-active 
+            focus:ring-offset-light
+            dark:border-primary-card-color 
+            dark:focus:border-primary-card-color-active
+            dark:focus:ring-primary-card-color-active
+            dark:focus:ring-offset-main 
           `}
           onChange={(event) => setQuery(event.target.value)}
           displayValue={(person: any) => person?.name}

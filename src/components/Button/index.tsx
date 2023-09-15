@@ -20,10 +20,8 @@ const Button = ({ label, className, handler }: ButtonProps) => {
         "hover:border-primary-card-color-hover",
         "active:border-primary-card-color-active",
         "text-primary-card-text-color",
-        "dark:bg-secondary-card-color",
-        "dark:text-secondary-card-text-color",
-        "dark:hover:bg-secondary-card-color-hover",
-        "dark:active:bg-secondary-card-color-active",
+        "font-bold",
+        "rounded-md",
         className
       )}
       onClick={handler}
