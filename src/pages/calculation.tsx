@@ -1,4 +1,5 @@
 import { useForm, FormProvider } from "react-hook-form";
+import Head from "next/head";
 import FormInput from "@/components/FormInput";
 import Select from "@/components/Select";
 import Button from "@/components/Button";
@@ -242,8 +243,12 @@ const Calculation = () => {
       {isLoading ? (
         <Loading />
       ) : (
-        <div
-          className="
+        <div>
+          <Head>
+            <title>Savings Calculator</title>
+          </Head>
+          <div
+            className="
             flex
             max-w-7xl 
             mx-auto 
@@ -254,99 +259,100 @@ const Calculation = () => {
             space-x-0 md:space-x-6 lg:space-x-16 
             space-y-16 md:space-y-0
           "
-        >
-          <FormProvider {...methods}>
-            <form
-              className="w-full flex-1 flex flex-col space-y-2"
-              noValidate
-              onSubmit={(e) => e.preventDefault()}
-            >
-              <div className="flex justify-end">
-                <div className="w-1/2">
-                  <Select
-                    label="Region"
-                    data={REGIONS}
-                    selected={region}
-                    setSelected={setRegion}
-                  />
+          >
+            <FormProvider {...methods}>
+              <form
+                className="w-full flex-1 flex flex-col space-y-2"
+                noValidate
+                onSubmit={(e) => e.preventDefault()}
+              >
+                <div className="flex justify-end">
+                  <div className="w-1/2">
+                    <Select
+                      label="Region"
+                      data={REGIONS}
+                      selected={region}
+                      setSelected={setRegion}
+                    />
+                  </div>
                 </div>
-              </div>
-              <div>
+                <div>
+                  <div className="flex space-x-2">
+                    <div className="flex-1">
+                      <Select
+                        label="Product Description"
+                        data={productDescriptions}
+                        selected={productDescription}
+                        setSelected={setProductDescription}
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <Select
+                        label="Product Type"
+                        data={productTypes}
+                        selected={productType}
+                        setSelected={setProductType}
+                      />
+                    </div>
+                  </div>
+                  <div className="flex space-x-2">
+                    <div className="flex-1">
+                      <Select
+                        label="Instance Family"
+                        data={instanceFamilies}
+                        selected={instanceFamily}
+                        setSelected={setInstanceFamily}
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <Select
+                        label="Instance Type"
+                        data={instanceTypes}
+                        selected={instanceType}
+                        setSelected={setInstanceType}
+                      />
+                    </div>
+                  </div>
+                </div>
+                <Select
+                  label="Tenancy"
+                  data={tenancies}
+                  selected={tenancy}
+                  setSelected={setTenancy}
+                />
+                <Select
+                  label="Plan"
+                  data={plans}
+                  selected={plan}
+                  setSelected={setPlan}
+                />
+                <Select
+                  label="Usage Type"
+                  data={usageTypes}
+                  selected={usageType}
+                  setSelected={setUsageType}
+                />
                 <div className="flex space-x-2">
                   <div className="flex-1">
-                    <Select
-                      label="Product Description"
-                      data={productDescriptions}
-                      selected={productDescription}
-                      setSelected={setProductDescription}
-                    />
+                    <FormInput type="number" name="usage" label="Usage" />
                   </div>
                   <div className="flex-1">
                     <Select
-                      label="Product Type"
-                      data={productTypes}
-                      selected={productType}
-                      setSelected={setProductType}
-                    />
-                  </div>
-                </div>
-                <div className="flex space-x-2">
-                  <div className="flex-1">
-                    <Select
-                      label="Instance Family"
-                      data={instanceFamilies}
-                      selected={instanceFamily}
-                      setSelected={setInstanceFamily}
+                      label="Unit"
+                      data={units}
+                      selected={unit}
+                      setSelected={setUnit}
                     />
                   </div>
                   <div className="flex-1">
-                    <Select
-                      label="Instance Type"
-                      data={instanceTypes}
-                      selected={instanceType}
-                      setSelected={setInstanceType}
-                    />
+                    <FormInput type="number" name="quantity" label="Quantity" />
                   </div>
                 </div>
-              </div>
-              <Select
-                label="Tenancy"
-                data={tenancies}
-                selected={tenancy}
-                setSelected={setTenancy}
-              />
-              <Select
-                label="Plan"
-                data={plans}
-                selected={plan}
-                setSelected={setPlan}
-              />
-              <Select
-                label="Usage Type"
-                data={usageTypes}
-                selected={usageType}
-                setSelected={setUsageType}
-              />
-              <div className="flex space-x-2">
-                <div className="flex-1">
-                  <FormInput type="number" name="usage" label="Usage" />
-                </div>
-                <div className="flex-1">
-                  <Select
-                    label="Unit"
-                    data={units}
-                    selected={unit}
-                    setSelected={setUnit}
-                  />
-                </div>
-                <div className="flex-1">
-                  <FormInput type="number" name="quantity" label="Quantity" />
-                </div>
-              </div>
-              <Button label="Calculate Savings" handler={calculate} />
-            </form>
-          </FormProvider>
-          <Savings />
+                <Button label="Calculate Savings" handler={calculate} />
+              </form>
+            </FormProvider>
+            <Savings />
+          </div>
         </div>
       )}
     </>

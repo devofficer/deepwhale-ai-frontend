@@ -1,13 +1,18 @@
 import Description from "@/components/Description";
 import Savings from "@/components/Savings";
 import { Inter } from "next/font/google";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <main
-      className={`
+    <div>
+      <Head>
+        <title>Deep Whale</title>
+      </Head>
+      <main
+        className={`
         flex 
         flex-col
         md:flex-row
@@ -22,9 +27,10 @@ export default function Home() {
         py-4 md:py-16
         ${inter.className}
       `}
-    >
-      <Description />
-      <Savings />
-    </main>
+      >
+        <Description />
+        <Savings />
+      </main>
+    </div>
   );
 }
